@@ -14,7 +14,7 @@ void input()
 
         if (n <= 20)
         {
-            break; //
+            break; 
         }
         else
         {
