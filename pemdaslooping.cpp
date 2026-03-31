@@ -1,76 +1,49 @@
 
 #include <iostream>
+#include <ctime>
 using namespace std;
 
-int arr[20];
-int n;
-
-void input() 
-{
-    while (true)
-    {
-        cout << "Masukan Jumlah Data Pada Array : ";
-        cin >> n;
-
-        if (n <= 20)
-        {
-            break; 
-        }
-        else
-        {
-            cout << "\nArray Tidak Boleh Lebih Dari 20\n";
-        }
-    }
-    cout << endl;
-    cout << "=============================================";
-    cout << "==========Masukan Elemen Array==============";
-    cout << "=============================================" << endl;
-
-    for (int i = 0; i < n; i++)
-    {
-        cout << "Data ke-" << (i + 1) << ": ";
-        cin >> arr[i];
-    }
-}
-
-void insertionsort()
-{
-    int temp;
-    int j;
-
-    for (int i = 0; i < n; i++)
-    {
-        temp = arr[i];
-        j = i - 1;
-        while (j >= 0 && arr[j] > temp)
-        {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = temp;
-        cout << "\nstep" << i << ": ";
-        for (int k = 0; k < n; k++)
-        {
-            cout << arr[k] << " ";
-        }
-    }
-}
-void display()
-{
-    cout << endl;
-    cout << "\n=================";
-    cout << "\nElemen Array" << endl;
-    cout << "\n=================" << endl;
-
-    for (int j = 0; j < n; j++)
-    {
-        cout << arr[j] << endl;
-    }
-    cout << endl;
-}
 int main()
 {
-    input();
+    int x;
+
+    // Perulangan dengan FOR
+    // mencetak tulisan seabnyak 5 kali
+    cout << "PERULANGAN FOR" << endl;
+    for (int i = 0; i <= 4; i++)
+    {
+        cout << "Teknologi Informasi UMY" << endl;
+    }
+    cout << endl;
+
+    // untuk mendapatkan urutan angka acak yg berbeda
+    srand(time(0));
+
+    // Perulangan dengan WHILE
+    cout << "PERULANGAN WHILE" << endl;
+    x = 1 + rand() % 10;
+
+    while (x <= 5)
+    {
+        cout << "Bilangan acak = " << x << endl;
+        x = rand() % 10;
+    }
+
+    cout << "Bilangan acak while yang terakhir =" << x << endl;
+    cout << endl;
+
+    // Perulangan dengan DO...WHILE
+    cout << "PERULANGAN DO...WHILE" << endl;
+    x = 1 + rand() % 10;
+    do
+    {
+        cout << "Bilangan acak = " << x << endl;
+        x = rand() % 10;
+    } while (x <= 5);
+
+    cout << "Bilangan acak do-while yang terakhir =" << x << endl;
+    cout << endl;
+}
     insertionsort();
     display();
     system("pause");
